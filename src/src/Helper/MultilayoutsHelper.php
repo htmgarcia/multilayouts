@@ -127,16 +127,16 @@ abstract class MultiLayoutsHelper
 			{
 				// We know that user has the privilege to view the article
 				$item->link     = Route::_(RouteHelper::getArticleRoute($item->slug, $item->catid, $item->language));
-				$item->linkText = Text::_('MOD_ARTICLES_NEWS_READMORE');
+				$item->linkText = Text::_('MOD_MULTI_LAYOUTS_READMORE');
 			}
 			else
 			{
 				$item->link = new Uri(Route::_('index.php?option=com_users&view=login', false));
 				$item->link->setVar('return', base64_encode(RouteHelper::getArticleRoute($item->slug, $item->catid, $item->language)));
-				$item->linkText = Text::_('MOD_ARTICLES_NEWS_READMORE_REGISTER');
+				$item->linkText = Text::_('MOD_MULTI_LAYOUTS_READMORE_REGISTER');
 			}
 
-			$item->introtext = HTMLHelper::_('content.prepare', $item->introtext, '', 'mod_articles_news.content');
+			$item->introtext = HTMLHelper::_('content.prepare', $item->introtext, '', 'mod_multi_layouts.content');
 
 			// Remove any images belongs to the text
 			if (!$params->get('image'))
