@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_multi_layouts
  *
- * @copyright   (C) 2021 Valentin Garcia <https://htmgarcia.com>
+ * @copyright   (C) 2022 Valentin Garcia <https://htmgarcia.com>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -138,40 +138,36 @@ abstract class MultiLayoutsHelper
 
 			$item->introtext = HTMLHelper::_('content.prepare', $item->introtext, '', 'mod_multi_layouts.content');
 
-			// Remove any images belongs to the text
-			if (!$params->get('image'))
+			// Remove any images from content
+			$item->introtext = preg_replace('/<img[^>]*>/', '', $item->introtext);
+
+			// Get article images
+			$images 					= json_decode($item->images);
+
+			// Intro article image
+			$item->imageIntroSrc 		= '';
+			$item->imageIntroAlt 		= '';
+			$item->imageIntroCaption 	= '';
+
+			$item->imageIntroSrc = htmlspecialchars($images->image_intro, ENT_COMPAT, 'UTF-8');
+			$item->imageIntroAlt = htmlspecialchars($images->image_intro_alt, ENT_COMPAT, 'UTF-8');
+
+			if ($images->image_intro_caption)
 			{
-				$item->introtext = preg_replace('/<img[^>]*>/', '', $item->introtext);
+				$item->imageIntroCaption = htmlspecialchars($images->image_intro_caption, ENT_COMPAT, 'UTF-8');
 			}
 
-			// Show the Intro/Full image field of the article
-			if ($params->get('img_intro_full') !== 'none')
+			// Full article image
+			$item->imageFullSrc 		= '';
+			$item->imageFullAlt 		= '';
+			$item->imageFullCaption 	= '';
+
+			$item->imageFullSrc = htmlspecialchars($images->image_fulltext, ENT_COMPAT, 'UTF-8');
+			$item->imageFullAlt = htmlspecialchars($images->image_fulltext_alt, ENT_COMPAT, 'UTF-8');
+
+			if ($images->image_intro_caption)
 			{
-				$images = json_decode($item->images);
-				$item->imageSrc = '';
-				$item->imageAlt = '';
-				$item->imageCaption = '';
-
-				if ($params->get('img_intro_full') === 'intro' && !empty($images->image_intro))
-				{
-					$item->imageSrc = htmlspecialchars($images->image_intro, ENT_COMPAT, 'UTF-8');
-					$item->imageAlt = htmlspecialchars($images->image_intro_alt, ENT_COMPAT, 'UTF-8');
-
-					if ($images->image_intro_caption)
-					{
-						$item->imageCaption = htmlspecialchars($images->image_intro_caption, ENT_COMPAT, 'UTF-8');
-					}
-				}
-				elseif ($params->get('img_intro_full') === 'full' && !empty($images->image_fulltext))
-				{
-					$item->imageSrc = htmlspecialchars($images->image_fulltext, ENT_COMPAT, 'UTF-8');
-					$item->imageAlt = htmlspecialchars($images->image_fulltext_alt, ENT_COMPAT, 'UTF-8');
-
-					if ($images->image_intro_caption)
-					{
-						$item->imageCaption = htmlspecialchars($images->image_fulltext_caption, ENT_COMPAT, 'UTF-8');
-					}
-				}
+				$item->imageFullCaption = htmlspecialchars($images->image_fulltext_caption, ENT_COMPAT, 'UTF-8');
 			}
 
 			if ($triggerEvents)

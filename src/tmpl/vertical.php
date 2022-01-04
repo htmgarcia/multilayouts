@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_multi_layouts
  *
- * @copyright   (C) 2021 Valentin Garcia <https://htmgarcia.com>
+ * @copyright   (C) 2022 Valentin Garcia <https://htmgarcia.com>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -26,10 +26,6 @@ if (!$list)
 		<?php $item = $list[$i]; ?>
 		<li class="newsflash-item" itemscope itemtype="https://schema.org/Article">
 			<?php require ModuleHelper::getLayoutPath('mod_multi_layouts', '_item'); ?>
-
-			<?php if ($n > 1 && (($i < $n - 1) || $params->get('showLastSeparator'))) : ?>
-				<span class="article-separator">&#160;</span>
-			<?php endif; ?>
 		</li>
 	<?php endfor; ?>
 </ul>

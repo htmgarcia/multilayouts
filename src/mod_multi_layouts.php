@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_multi_layouts
  *
- * @copyright   (C) 2021 Valentin Garcia <https://htmgarcia.com>
+ * @copyright   (C) 2022 Valentin Garcia <https://htmgarcia.com>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 

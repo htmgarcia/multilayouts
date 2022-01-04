@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_multi_layouts
  *
- * @copyright   (C) 2021 Valentin Garcia <https://htmgarcia.com>
+ * @copyright   (C) 2022 Valentin Garcia <https://htmgarcia.com>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -11,26 +11,19 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Layout\LayoutHelper;
 ?>
-<?php if ($params->get('item_title')) : ?>
 
-	<?php $item_heading = $params->get('item_heading', 'h4'); ?>
-	<<?php echo $item_heading; ?> class="newsflash-title">
-	<?php if ($item->link !== '' && $params->get('link_titles')) : ?>
-		<a href="<?php echo $item->link; ?>">
-			<?php echo $item->title; ?>
-		</a>
-	<?php else : ?>
+<h4 class="newsflash-title">
+	<a href="<?php echo $item->link; ?>">
 		<?php echo $item->title; ?>
-	<?php endif; ?>
-	</<?php echo $item_heading; ?>>
-<?php endif; ?>
+	</a>
+</h4>
 
-<?php if ($params->get('img_intro_full') !== 'none' && !empty($item->imageSrc)) : ?>
+<?php if (!empty($item->imageIntroSrc)) : ?>
 	<figure class="newsflash-image">
-		<img src="<?php echo $item->imageSrc; ?>" alt="<?php echo $item->imageAlt; ?>">
-		<?php if (!empty($item->imageCaption)) : ?>
+		<img src="<?php echo $item->imageIntroSrc; ?>" alt="<?php echo $item->imageIntroAlt; ?>">
+		<?php if (!empty($item->imageIntroCaption)) : ?>
 			<figcaption>
-				<?php echo $item->imageCaption; ?>
+				<?php echo $item->imageIntroCaption; ?>
 			</figcaption>
 		<?php endif; ?>
 	</figure>
@@ -42,12 +35,10 @@ use Joomla\CMS\Layout\LayoutHelper;
 
 <?php echo $item->beforeDisplayContent; ?>
 
-<?php if ($params->get('show_introtext', 1)) : ?>
-	<?php echo $item->introtext; ?>
-<?php endif; ?>
+<?php echo $item->introtext; ?>
 
 <?php echo $item->afterDisplayContent; ?>
 
-<?php if (isset($item->link) && $item->readmore != 0 && $params->get('readmore')) : ?>
+<?php if (isset($item->link) && $item->readmore != 0) : ?>
 	<?php echo LayoutHelper::render('joomla.content.readmore', array('item' => $item, 'params' => $item->params, 'link' => $item->link)); ?>
 <?php endif; ?>
