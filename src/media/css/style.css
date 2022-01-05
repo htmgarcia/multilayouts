@@ -1,0 +1,40 @@
+.multilayouts-container.multilayouts-one-column,
+.multilayouts-container.multilayouts-two-columns,
+.multilayouts-container.multilayouts-three-columns,
+.multilayouts-container.multilayouts-four-columns {
+  display: grid;
+  grid-gap: 30px;
+}
+
+.multilayouts-container.multilayouts-one-column {
+  grid-template-columns: 1fr;
+}
+
+.multilayouts-container.multilayouts-two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.multilayouts-container.multilayouts-three-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.multilayouts-container.multilayouts-four-columns {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 979px) {
+
+  .multilayouts-container.multilayouts-three-columns,
+  .multilayouts-container.multilayouts-four-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .multilayouts-container.multilayouts-two-columns,
+  .multilayouts-container.multilayouts-three-columns,
+  .multilayouts-container.multilayouts-four-columns {
+    grid-template-columns: 1fr;
+  }
+}
