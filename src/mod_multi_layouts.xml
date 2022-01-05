@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>htmgarcia@gmail.com</authorEmail>
 	<authorUrl>htmgarcia.com</authorUrl>
-	<version>1.0.0b2</version>
+	<version>1.0.0</version>
 	<description>MOD_MULTI_LAYOUTS_XML_DESCRIPTION</description>
 	<namespace path="src">Joomla\Module\MultiLayouts</namespace>
 	<files>
