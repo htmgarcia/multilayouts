@@ -12,14 +12,14 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Layout\LayoutHelper;
 ?>
 
-<h4 class="newsflash-title">
+<h4>
 	<a href="<?php echo $item->link; ?>">
 		<?php echo $item->title; ?>
 	</a>
 </h4>
 
 <?php if (!empty($item->imageIntroSrc)) : ?>
-	<figure class="newsflash-image">
+	<figure>
 		<img src="<?php echo $item->imageIntroSrc; ?>" alt="<?php echo $item->imageIntroAlt; ?>">
 		<?php if (!empty($item->imageIntroCaption)) : ?>
 			<figcaption>

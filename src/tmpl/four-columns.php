@@ -13,7 +13,7 @@ use Joomla\CMS\Helper\ModuleHelper;
 
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $app->getDocument()->getWebAssetManager();
-$wa->registerAndUseStyle('mod_modules', 'mod_multi_layouts/template-vert.css');
+$wa->registerAndUseStyle('mod_modules', 'mod_multi_layouts/style.css');
 
 if (!$list)
 {
@@ -21,11 +21,10 @@ if (!$list)
 }
 
 ?>
-<ul class="mod-articlesnews-vertical newsflash-vert mod-list">
-	<?php for ($i = 0, $n = count($list); $i < $n; $i ++) : ?>
-		<?php $item = $list[$i]; ?>
-		<li class="newsflash-item" itemscope itemtype="https://schema.org/Article">
+<div class="multilayouts-container multilayouts-four-columns">
+	<?php foreach ($list as $item) : ?>
+		<div itemscope itemtype="https://schema.org/Article">
 			<?php require ModuleHelper::getLayoutPath('mod_multi_layouts', '_item'); ?>
-		</li>
-	<?php endfor; ?>
-</ul>
+		</div>
+	<?php endforeach; ?>
+</div>

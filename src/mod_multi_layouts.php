@@ -14,4 +14,4 @@ use Joomla\Module\MultiLayouts\Site\Helper\MultiLayoutsHelper;
 
 $list = MultiLayoutsHelper::getList($params);
 
-require ModuleHelper::getLayoutPath('mod_multi_layouts', $params->get('layout', 'horizontal'));
+require ModuleHelper::getLayoutPath('mod_multi_layouts', $params->get('layout', 'default'));

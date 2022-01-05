@@ -2,12 +2,12 @@
 <extension type="module" version="4.0" client="site" method="upgrade">
 	<name>mod_multi_layouts</name>
 	<author>Valentin Garcia</author>
-	<creationDate>03 January 2022</creationDate>
-	<copyright>(C) 2022 Open Source Matters, Inc.</copyright>
+	<creationDate>04 January 2022</creationDate>
+	<copyright>(C) 2022 htmgarcia.com</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>htmgarcia@gmail.com</authorEmail>
 	<authorUrl>htmgarcia.com</authorUrl>
-	<version>1.0.0b1</version>
+	<version>1.0.0b2</version>
 	<description>MOD_MULTI_LAYOUTS_XML_DESCRIPTION</description>
 	<namespace path="src">Joomla\Module\MultiLayouts</namespace>
 	<files>
@@ -20,6 +20,11 @@
 		<language tag="en-GB">language/en-GB/mod_multi_layouts.sys.ini</language>
 	</languages>
 	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_ARTICLES_NEWSFLASH"/>
+
+	<media destination="mod_multi_layouts" folder="media">
+      <folder>css</folder>
+  </media>
+
 	<config>
 		<fields name="params">
 			<fieldset name="basic">

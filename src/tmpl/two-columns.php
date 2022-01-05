@@ -21,7 +21,7 @@ if (!$list)
 }
 
 ?>
-<div class="multilayouts-container multilayouts-one-column">
+<div class="multilayouts-container multilayouts-two-columns">
 	<?php foreach ($list as $item) : ?>
 		<div itemscope itemtype="https://schema.org/Article">
 			<?php require ModuleHelper::getLayoutPath('mod_multi_layouts', '_item'); ?>
