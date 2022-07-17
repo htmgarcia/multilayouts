@@ -172,6 +172,6 @@
 		</fields>
 	</config>
 	<updateservers>
-		<server type="extension" priority="1" name="Multi Layouts Updates"><![CDATA[https://github.com/htmgarcia/multilayouts/blob/develop/updates.xml]]></server>
+		<server type="extension" priority="1" name="Multi Layouts Updates"><![CDATA[https://raw.githubusercontent.com/htmgarcia/multilayouts/develop/updates.xml]]></server>
 	</updateservers>
 </extension>
