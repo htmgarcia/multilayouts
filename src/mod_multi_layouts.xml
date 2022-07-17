@@ -172,6 +172,6 @@
 		</fields>
 	</config>
 	<updateservers>
-		<server type="extension" priority="1" name="Multi Layouts Updates">http://htmgarcia.github.io/joomla/updates/mod_multi_layouts.xml</server>
+		<server type="extension" priority="1" name="Multi Layouts Updates"><![CDATA[http://htmgarcia.github.io/joomla/updates/mod_multi_layouts.xml]]></server>
 	</updateservers>
 </extension>
