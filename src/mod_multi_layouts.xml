@@ -171,4 +171,7 @@
 			</fieldset>
 		</fields>
 	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Multi Layouts Updates"><![CDATA[https://github.com/htmgarcia/multilayouts/blob/develop/updates.xml]]></server>
+	</updateservers>
 </extension>
