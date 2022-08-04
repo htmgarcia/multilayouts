@@ -2,12 +2,12 @@
 <extension type="module" version="4.0" client="site" method="upgrade">
 	<name>mod_multi_layouts</name>
 	<author>Valentin Garcia</author>
-	<creationDate>17 July 2022</creationDate>
+	<creationDate>3 August 2022</creationDate>
 	<copyright>(C) 2022 htmgarcia.com</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>htmgarcia@gmail.com</authorEmail>
 	<authorUrl>htmgarcia.com</authorUrl>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<description>MOD_MULTI_LAYOUTS_XML_DESCRIPTION</description>
 	<namespace path="src">Joomla\Module\MultiLayouts</namespace>
 	<files>
@@ -123,6 +123,19 @@
 					type="radio"
 					label="MOD_MULTI_LAYOUTS_FIELD_TRIGGEREVENTS_LABEL"
 					description="MOD_MULTI_LAYOUTS_FIELD_TRIGGEREVENTS_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="display_images"
+					type="radio"
+					label="MOD_MULTI_LAYOUTS_FIELD_DISPLAY_IMAGES_LABEL"
+					description="MOD_MULTI_LAYOUTS_FIELD_DISPLAY_IMAGES_DESC"
 					layout="joomla.form.field.radio.switcher"
 					default="0"
 					filter="integer"

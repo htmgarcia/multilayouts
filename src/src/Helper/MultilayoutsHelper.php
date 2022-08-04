@@ -139,7 +139,9 @@ abstract class MultiLayoutsHelper
 			$item->introtext = HTMLHelper::_('content.prepare', $item->introtext, '', 'mod_multi_layouts.content');
 
 			// Remove any images from content
-			$item->introtext = preg_replace('/<img[^>]*>/', '', $item->introtext);
+			if (!$params->get('display_images', 0)) {
+				$item->introtext = preg_replace('/<img[^>]*>/', '', $item->introtext);
+			}
 
 			// Get article images
 			$images 					= json_decode($item->images);
