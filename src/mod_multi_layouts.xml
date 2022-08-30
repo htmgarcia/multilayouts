@@ -2,7 +2,7 @@
 <extension type="module" version="4.0" client="site" method="upgrade">
 	<name>mod_multi_layouts</name>
 	<author>Valentin Garcia</author>
-	<creationDate>3 August 2022</creationDate>
+	<creationDate>29 August 2022</creationDate>
 	<copyright>(C) 2022 htmgarcia.com</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>htmgarcia@gmail.com</authorEmail>
